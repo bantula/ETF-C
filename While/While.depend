@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680888755 source:c:\users\windows user\documents\zadaci c\prog2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
