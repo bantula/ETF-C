@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1685464619 source:c:\users\windows user\documents\zadaci c\isprobavam\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+
