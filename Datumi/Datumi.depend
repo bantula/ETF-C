@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680891359 source:c:\users\windows user\documents\zadaci c\datumi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
