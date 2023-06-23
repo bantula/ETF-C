@@ -1,0 +1,7 @@
+T(0xc88d87c5cb -> 0xf535e23c55) = 4.34 DENIED
+T(0x2fd82448cf -> 0xc88d87c5cb) = 4.83 DENIED
+A(0x2fd82448cf) = 1.35
+A(0x5ef8cce23a) = 6.25
+A(0xa186f62f47) = 28.18
+A(0xc88d87c5cb) = 7.05
+A(0xf535e23c55) = 9.67

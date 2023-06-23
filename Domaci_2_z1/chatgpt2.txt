@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Node definition
+struct Node {
+    char* data;
+    struct Node* next;
+};
+
+// Function to insert a new node at the beginning of the list
+void insert(struct Node** headRef, char* data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = *headRef;
+    *headRef = newNode;
+}
+
+// Function to compare two strings lexicographically
+int compareStrings(const char* str1, const char* str2) {
+    return strcmp(str1, str2);
+}
+
+// Function to swap the contents of two nodes
+void swapNodes(struct Node* node1, struct Node* node2) {
+    char* temp = node1->data;
+    node1->data = node2->data;
+    node2->data = temp;
+}
+
+// Function to perform lexicographic sorting of the linked list
+void lexicoSort(struct Node* head) {
+    if (head == NULL || head->next == NULL)
+        return;
+
+    struct Node* curr;
+    struct Node* prev = NULL;
+    int swapped;
+
+    do {
+        swapped = 0;
+        curr = head;
+
+        while (curr->next != prev) {
+            if (compareStrings(curr->data, curr->next->data) > 0) {
+                swapNodes(curr, curr->next);
+                swapped = 1;
+            }
+            curr = curr->next;
+        }
+        prev = curr;
+    } while (swapped);
+}
+
+// Function to print the contents of the linked list
+void printList(struct Node* node) {
+    while (node != NULL) {
+        printf("%s ", node->data);
+        node = node->next;
+    }
+    printf("\n");
+}
+
+// Function to free the memory allocated for the linked list
+void freeList(struct Node* node) {
+    struct Node* temp;
+
+    while (node != NULL) {
+        temp = node;
+        node = node->next;
+        free(temp);
+    }
+}
+
+int main() {
+    // Example usage
+    struct Node* head = NULL;
+
+    // Inserting nodes
+    insert(&head, "apple");
+    insert(&head, "banana");
+    insert(&head, "orange");
+    insert(&head, "grape");
+
+    printf("Original List: ");
+    printList(head);
+
+    lexicoSort(head);
+
+    printf("Sorted List: ");
+    printList(head);
+
+    freeList(head);
+    return 0;
+}
+
